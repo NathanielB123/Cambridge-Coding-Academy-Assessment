@@ -59,7 +59,6 @@ def min_play(board,token, field, fieldheights,remaining_ply):
         return [board.not_full_columns(),random.randint(1,3)]
 
 def AIcheck(board, token):
-    # Modify to set a different search depth
     ply_remaining = 2
     fieldheights=[]
     field=board.field

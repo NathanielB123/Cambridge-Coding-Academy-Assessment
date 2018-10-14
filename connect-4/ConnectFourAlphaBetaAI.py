@@ -67,12 +67,10 @@ def min_play(board,token, field, fieldheights,remaining_ply, alpha, beta):
         return [board.not_full_columns(),random.randint(1,3)]
 
 def AIcheck(board, token):
-    # Modify to set a different search depth
     ply_remaining = 2
     fieldheights=[]
     field=board.field
     for i in range(board.width):
         fieldheights.append(board.col_height(i))
     (move, value) = max_play(board, token,field, ply_remaining, fieldheights, -99999999, 99999999)
-    Average=0
     return move
