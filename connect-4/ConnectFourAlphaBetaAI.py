@@ -69,7 +69,7 @@ def min_play(board,token, field, fieldheights,remaining_ply, alpha, beta):
 def AIcheck(board, token):
     import time
     ST=time.time()
-    ply_remaining = 1
+    ply_remaining = 2
     fieldheights=[]
     field=board.field
     for i in range(board.width):
