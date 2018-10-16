@@ -59,10 +59,13 @@ def min_play(board,token, field, fieldheights,remaining_ply):
         return [board.not_full_columns(),random.randint(1,3)]
 
 def AIcheck(board, token):
-    ply_remaining = 2
+    import time
+    ST=time.time()
+    ply_remaining = 1
     fieldheights=[]
     field=board.field
     for i in range(board.width):
         fieldheights.append(board.col_height(i))
     (move, value) = max_play(board, token,field, ply_remaining, fieldheights)
+    print("M"+str(time.time()-ST))
     return move
