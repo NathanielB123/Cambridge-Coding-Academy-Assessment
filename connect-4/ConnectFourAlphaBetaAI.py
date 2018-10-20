@@ -16,7 +16,7 @@ def other(token):
 def state_score(game, token,field):
     import random
     score_red, score_blue = game.scoreAITEMP(field)
-    return (score_red-(score_blue)+(random.randint(-4,4)/10)) #Returns the score with a little randomness to make games not always play out the same way
+    return (score_red-(score_blue))#+(random.randint(-4,4)/10)) #Returns the score with a little randomness to make games not always play out the same way
 
 def max_play(board, token,newfield, remaining_ply, fieldheights, alpha, beta):
     moves = []
@@ -67,13 +67,13 @@ def min_play(board,token, field, fieldheights,remaining_ply, alpha, beta):
         return [board.not_full_columns(),random.randint(1,3)]
 
 def AIcheck(board, token):
-    import time
-    ST=time.time()
+    #import time
+    #ST=time.time()
     ply_remaining = 2
     fieldheights=[]
     field=board.field
     for i in range(board.width):
         fieldheights.append(board.col_height(i))
     (move, value) = max_play(board, token,field, ply_remaining, fieldheights, -99999999, 99999999)
-    print("A"+str(time.time()-ST))
+    #print("A"+str(time.time()-ST))
     return move
