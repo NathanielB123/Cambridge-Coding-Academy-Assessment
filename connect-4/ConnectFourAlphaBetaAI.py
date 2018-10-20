@@ -16,7 +16,7 @@ def other(token):
 def state_score(game, token,field):
     import random
     score_red, score_blue = game.scoreAITEMP(field)
-    return (score_red-(score_blue))#+(random.randint(-4,4)/10)) #Returns the score with a little randomness to make games not always play out the same way
+    return (score_red-(score_blue)+(random.randint(-4,4)/10)) #Returns the score with a little randomness to make games not always play out the same way
 
 def max_play(board, token,newfield, remaining_ply, fieldheights, alpha, beta):
     moves = []
