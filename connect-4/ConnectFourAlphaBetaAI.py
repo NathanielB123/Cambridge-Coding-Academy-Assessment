@@ -31,7 +31,6 @@ def max_play(board, token,newfield, remaining_ply, fieldheights, alpha, beta):
                 value = state_score(board,token, newfield)
             else:
                 (min_move, value) = min_play(board,token, newfield, newheights, remaining_ply-1, alpha, beta)
-                #Alpha Beta Pruning
                 alpha=max(alpha, value)
                 if beta <= alpha:
                     moves.append([n,value])
@@ -60,7 +59,6 @@ def min_play(board,token, field, fieldheights,remaining_ply, alpha, beta):
                     moves.append([n,value])
                     break
             moves.append([n,value])
-    # This best move for Min finds the minimum board value
     if len(moves)>0:
         return min(moves, key = lambda x: x[1])
     else:
